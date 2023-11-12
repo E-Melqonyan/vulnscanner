@@ -1,0 +1,6 @@
+# venv
+/venv
+
+# python
+.pip_cache
+__pycache__/

@@ -1,4 +1,4 @@
-# GitHub Vulnerability Scannerscanner
+# GitHub Vulnerability Scanner
 Simple vulnerability scanner based on code clone detection
 
 ## Getting Started

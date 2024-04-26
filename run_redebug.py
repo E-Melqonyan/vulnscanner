@@ -178,14 +178,19 @@ def process_repository(repo_name, patch_identifier_pairs):
                 future.result()
                 logger.info(f"Task completed for source: {source}, patch: {patch}, identifier: {identifier}")
             except Exception as e:
+                if os.path.exists(repo_path):
+                    shutil.rmtree(repo_path)
                 logger.error(f"Error processing source: {source} with patch: {patch}, identifier: {identifier}: {e}")
     logger.info(f"Processing complete of {repo_path}")
+    if os.path.exists(repo_path):
+        shutil.rmtree(repo_path)
 
 def main():
-    # repos = get_repos(300)
-    # repo_names = [repo['node']['nameWithOwner'] for repo in repos]
-
-    repo_names = ['redis/redis']
+    repos = get_repos(200)
+    repo_names = [repo['node']['nameWithOwner'] for repo in repos]
+    begin = os.getenv('Begin', 0)
+    end = os.getenv('End', 50)
+    repo_names = repo_names[int(begin):int(end)]
 
     if os.path.exists(OUTPUTS_DIR):
         shutil.rmtree(OUTPUTS_DIR)
@@ -200,6 +205,10 @@ def main():
 
     for job in jobs:
         job.result()
+
+    patches_path = WORKING_DIR / 'patches'
+    if os.path.exists(patches_path):
+        shutil.rmtree(patches_path)
 
 if __name__ == '__main__':
     # attach_debugger()

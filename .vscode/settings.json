@@ -1,0 +1,4 @@
+{
+    "avprobe.ffprobePath": "/opt/homebrew/bin/ffprobe",
+    "avprobe.ffmpegPath": "/opt/homebrew/bin/ffmpeg"
+}

@@ -11,7 +11,8 @@ import datetime
 from retrying import retry
 from requests.exceptions import HTTPError, ConnectionError, Timeout
 
-from utilitys import attach_debugger, time_it
+from utilitys import time_it
+# from utilitys import attach_debugger
 
 # Constants
 VULNERABLE_COMMITS_FILE_PATH = 'vulnerable_commits.yml'

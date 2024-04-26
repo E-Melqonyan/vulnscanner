@@ -11,7 +11,7 @@ from pathlib import Path
 from yaml.loader import SafeLoader
 
 from vuln_scanner_helper import get_repos
-from utilitys import attach_debugger
+# from utilitys import attach_debugger
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -190,6 +190,8 @@ def main():
     repo_names = [repo['node']['nameWithOwner'] for repo in repos]
     begin = os.getenv('Begin', 0)
     end = os.getenv('End', 50)
+    logger.info(f"Processing repositories {begin} to {end}...")
+    logger.info(f"Number of processes: {NUM_PROCESSES}")
     repo_names = repo_names[int(begin):int(end)]
 
     if os.path.exists(OUTPUTS_DIR):

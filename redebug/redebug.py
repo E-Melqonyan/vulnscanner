@@ -10,7 +10,7 @@ import common
 import patchloader
 import sourceloader
 import reporter
-import debugpy
+# import debugpy
 
 try:
     import argparse

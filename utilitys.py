@@ -1,10 +1,10 @@
 import time
-import debugpy
+# import debugpy
 import functools
 
-def attach_debugger():
-    debugpy.listen(5678)
-    debugpy.wait_for_client()
+# def attach_debugger():
+#     debugpy.listen(5678)
+#     debugpy.wait_for_client()
 
 def time_it(func):
     @functools.wraps(func)

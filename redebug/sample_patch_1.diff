@@ -1,0 +1,9 @@
+--- a/file1.txt
++++ b/file1.txt
+@@ -1,3 +1,3 @@
+ This is the original content of file1.
+ It has multiple lines.
+-This line will be changed in the patch.
++This line has been modified in the patch.
+ Another line here.
+

@@ -1,0 +1,10 @@
+--- a/sample_code_2.py
++++ b/sample_code_2.py
+@@ -5,4 +5,4 @@ def factorial(n):
+     if n == 0 or n == 1:
+         return 1
+     else:
+-        return n * factorial(n)
+\ No newline at end of file
++        return n * factorial(n - 1)
+\ No newline at end of file
